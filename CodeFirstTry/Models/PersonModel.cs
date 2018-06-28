@@ -8,6 +8,7 @@ namespace CodeFirstTry.Models
 {
     public class PersonModel
     {
+        [Key]
         public int PersonID { get; set; }
 
         [Display(Name = "First Name")]

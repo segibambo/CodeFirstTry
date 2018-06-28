@@ -8,8 +8,11 @@ namespace CodeFirstTry.Models
 {
     public class Birthday:DbContext
     {
-        public DbSet<PersonModel> Persons { get; set; }
-        public DbSet<Family> Families { get; set; }
+        public IDbSet<PersonModel> Persons { get; set; }
+        public IDbSet<Family> Families { get; set; }
 
+        
     }
+
+   
 }
