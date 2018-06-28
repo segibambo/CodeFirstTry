@@ -10,14 +10,16 @@ namespace CodeFirstTry.Controllers
     public class HomeController : Controller
     {
         Birthday birthdays = new Birthday();
+        
         // GET: Home
         public ActionResult Index()
         {
-            var birthed = from d in birthdays.Persons where
-                          d.DateofBirth >= DateTime.Now
+            var birthed = from d in birthdays.Persons
+                          where
+                            d.DateofBirth != DateTime.Now
                           select d;
 
-                         
+
             return View(birthed.ToList());
         }
 
@@ -39,6 +41,11 @@ namespace CodeFirstTry.Controllers
                 birthdays.SaveChanges();
 
                 return RedirectToAction("Index");
+            }
+
+            else
+            {
+                //
             }
 
             return View();
